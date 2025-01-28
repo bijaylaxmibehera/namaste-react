@@ -15,3 +15,12 @@ React is  named React because of its ability to react to changes in data. It is 
 
 ### 5. What is crossorigin in script tag?
 The crossorigin attribute sets the mode of the request to an HTTP CORS request. The purpose of the cross origin attribute is used to share the resoures from one domain to another domain. Basically, it is used to handle the CORS request that check whether it is safe to allow for sharing the resources from other domain. 
+
+### 6. What is the difference between React and ReactDOM?
+React is a javascript library for building User Interfaces whereas React DOM is a separate package that enables React to update and render UI components on the web browser by directly interacting with the browser's Document Object Model (DOM), ensuring smooth, dynamic user experiences by not reloading the whole page.
+
+### 7. What is the difference between react.development.js and react.production.js files via CDN?
+Development is the stage of an application before it's made public while production is the term used for the same application when it's made public. Development build is several times slower than the production build. 
+
+### 8. What is async and defer?
+Async and defer are boolean attribute. Script is downloaded in parallel to parsing the page, and executed as soon as it is available (do not block HTML DOM construction during downloading process) and do not wait for anything.  
