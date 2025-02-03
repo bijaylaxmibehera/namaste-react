@@ -14,7 +14,7 @@ npx is a tool that is used to execute the packages. It comes with the npm, when 
 Dependencies should contain library and framework in which our app is built on, needs to function effectively such as Vue, React, Angular, Express, JQuery, etc. devDependecies should contain modules/packages a developer needs during development such as parcel, webpack, vite, mocha. These packages are necessary only while we develop our project, not necessary on production. To save a dependency as a devDependencies on installation we need to do 
 ```npm install --save-dev```
 and for normal dependencies
-```npm install --save``
+```npm install --save```
 
 ### 6. What is Tree Shaking?
 Tree shaking is a process of removing unwanted code that we do not use while developing the application. In computing, tree shaking is a dead code elimination technique that is applied when optimizing code.
