@@ -29,6 +29,6 @@ The type attribute specifies the type of the script. The type attribute identifi
 - ```<TitleComponent/>``` : This value represents a component that is basically returning some JSX value. In simple terms TitleComponent a function that is returning a JSX value. A component is written inside the ```{</>}``` expression.
 - ```<TitleComponent></TitleComponent>``` : These are equivalent only when ```<TitleComponent/>``` has no child components. The opening and closing tags are created to include the child components.
 #### Example: 
- ```<TitleComponent>```
-       ```<ChildComponent/>```
+ ```<TitleComponent>```<br/>
+       ```<ChildComponent/>```<br/>
 ```</TitleComponent>```
