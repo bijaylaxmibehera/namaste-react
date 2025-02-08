@@ -1,12 +1,12 @@
 ### 1. What is JSX?
 JSX stands for javascript XML. JSX allows us to write HTML elements in javascript and place them in the DOM without any createElement() and or appendChild() methods. JSX makes it easier to write and add HTML in React. JSX converts HTML tags into react elements.
 - Example using JSX :
-``` const myElement = <h1>Hello, world!</h1>;```
-```const root= ReactDOM.createRoot(document.getElementById('root'));```
+``` const myElement = <h1>Hello, world!</h1>;```<br/>
+```const root= ReactDOM.createRoot(document.getElementById('root'));```<br/>
 ```root.render(myElement);```
 - Example without JSX :
-``` const myElement= React.createElement('h1',{}, "Hello, world! without using JSX!"); ```
-```const root=ReactDOM.createRoot(document.getElementById('root'));```
+``` const myElement= React.createElement('h1',{}, "Hello, world! without using JSX!"); ```<br/>
+```const root=ReactDOM.createRoot(document.getElementById('root'));```<br/>
 ```root.render(myElement);```
 
 ### 2. Superpowers of JSX.
