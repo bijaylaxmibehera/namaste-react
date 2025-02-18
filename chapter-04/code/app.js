@@ -42,18 +42,84 @@ const Header=()=>{
     )
 }
 
-const RestaurantCard=(props)=>{
+const restaurantData=[{
+    id:1,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/gfd5pzxes0hjuxdepvvp",
+    name:"Chancellor restaurant",
+    cuisine:"Indian, chinese",
+    ratings:4.3,
+    priceForTwo:300,
+    deliveryTime:45
+},
+{
+    id:2,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/g8hbdvszl8fwbmp1pqyp",
+    name:"Narula's Restaurant",
+    cuisine:"Indian, Chinese, Biriyani, Punjabi",
+    ratings:4.4,
+    priceForTwo:500,
+    deliveryTime:50
+},
+{
+    id:3,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/yziui8hniylbr5h6rift",
+    name:"Priya restaurant",
+    cuisine:"Indian, Chinese, Tandoor, Salads, Thalis",
+    ratings:4.5,
+    priceForTwo:250,
+    deliveryTime:35
+},
+{
+    id:4,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/g8hbdvszl8fwbmp1pqyp",
+    name:"Pipul restaurant",
+    cuisine:"Indian, chinese",
+    ratings:4.4,
+    priceForTwo:200,
+    deliveryTime:40
+},
+{
+    id:5,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/r4rpaumlk63gytmpnsnw",
+    name:"Shree Kunj restaurant",
+    cuisine:"South Indian, Chinese, Sweets",
+    ratings:4.3,
+    priceForTwo:200,
+    deliveryTime:20
+},
+{
+    id:6,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/RX_THUMBNAIL/IMAGES/VENDOR/2024/12/19/81cecf43-6f86-4db3-917d-c39794c370df_549288%20(1).jpg",
+    name:"Odiani Hotel & Restaurant",
+    cuisine:"Fast Food, Snacks",
+    ratings:4.3,
+    priceForTwo:200,
+    deliveryTime:40
+},
+{
+    id:7,
+    imageUrl:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/xwk19zkqddeuvvyx99sh",
+    name:"Milan restaurant",
+    cuisine:"North Indian, Chinese, Snacks",
+    ratings:4.1,
+    priceForTwo:250,
+    deliveryTime:35
+},
+]
+
+const RestaurantCard=({resData})=>{
+    const {imageUrl,name,cuisine,ratings,priceForTwo,deliveryTime}=resData;
     return (
         <div className="res-card-container">
            <div className="res-logo">
-            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/gfd5pzxes0hjuxdepvvp" alt="restaurant logo"/>
+            <img src={imageUrl} alt="restaurant logo"/>
            </div>
            <div className="res-details">
-              <h3>{props.name}</h3>
-              <p>{props.cuisine}</p>
-              <p>{props.ratings} star</p>
-              <p>₹300 FOR TWO</p>
-              <p>45min</p>
+              <h3>{name}</h3>
+              <p>{cuisine}</p>
+              <p>{ratings} star</p>
+              <p>₹{priceForTwo} FOR TWO</p>
+              <p>{deliveryTime}min</p>
            </div>
         </div>
     )
@@ -69,20 +135,32 @@ const Body=()=>{
                 </div>
             </div>
             <div className="rest-list">
-                  <RestaurantCard name={"Chancellor"} cuisine={"Indian, Chinese"} ratings={"4.3"}/>
-                  <RestaurantCard name={"KFC"} cuisine={"Fast food"} ratings={"4.0"}/>
+                {restaurantData.length ? (
+                    restaurantData?.map(res =>{
+                        return <RestaurantCard key={res.id} resData={res}/>
+                    })
+                ):(<h3>No restaurant found</h3>)}
+                  
             </div>
 
         </div>
     )
 }
 
+const Footer=()=>{
+    return (
+        <div className="footer-container">
+            <p>This is footer.</p>
+        </div>
+    )
+}
 
 const AppLayout=()=>{
     return (
         <div className="app">
           <Header/>
           <Body/>
+          <Footer/>
         </div>
     )
 }

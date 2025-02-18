@@ -53,11 +53,24 @@
     gap: 10px;
 }
 .res-card-container{
-    border: 1px solid black;
     width: 200px;
     padding: 5px;
+    background:rgb(255, 247, 247);
+}
+
+.res-card-container:hover{
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 .res-logo > img{
     width: 100%;
+}
+
+.footer-container{
+    background: rgb(22, 8, 8);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
 }
