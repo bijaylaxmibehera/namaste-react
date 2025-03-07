@@ -5,7 +5,7 @@
 Emmet is the essential toolkit for web developer. It allows us to type shortcut that are then expanded into full pieces of code for writting HTML and CSS.
 
 ### 2. Difference between library and framework? 
-A library is a collection of packages that perform specific operations where as a framework contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React JS is library and Angular is Framework. The framework provides the flow of a software application and tells the developer what it needs and calls the code provided by developer as required. If a library is used, the application calls the code from the library.
+A library is a collection of packages that perform specific operations where as a framework contains the basic flow and architecture of an application. The major difference between them is the complexcity. Libraries contain a number of methods that a developer can just call whenever they write code. React JS is library and Angular is Framework. The framework provides the flow of a software application and tells the developer what it needs and calls the code provided by developer as required. If a library is used, the application calls the code from the library.
 
 ### 3. What is CDN? Why do we use it?
 CDN stands for Content Delivery Network. It basically refers to collection of servers which are geographycally distributed to all over the world for faster delivery of content over the Internet. The main use of CDN is to deliver content through a network of server in a secure and efficient way.
