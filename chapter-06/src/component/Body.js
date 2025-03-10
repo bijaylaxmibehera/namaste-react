@@ -1,32 +1,34 @@
 import { useState, useEffect } from 'react';
 import RestaurantCard from './RestaurantCard';
+import Shimmer from './Shimmer';
+import { mockData } from '../utils/mockData';
 
 const Body = () => {
-  const [restaurantData, setRestaurantData] = useState([]);
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [restaurantData, setRestaurantData] = useState(mockData);
+  const [filteredRestaurant, setFilteredRestaurant] = useState(mockData);
   const [searchText, setSearchText] = useState('');
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        'https://www.swiggy.com/mapi/restaurants/search/v3?lat=20.2959847&lng=85.8246101&str=restaurant&trackingId=51bfa637-a940-5822-eb94-9caf090c30f8&submitAction=ENTER&queryUniqueId=74637fb4-1a85-70a9-5e9f-9a2c86995d03'
-      );
-      const data = await response.json();
-      const restaurants =
-        data?.data?.cards?.[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.slice(
-          1,
-          100
-        ) || [];
-      setRestaurantData(restaurants);
-      setFilteredRestaurant(restaurants);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       'https://www.swiggy.com/mapi/restaurants/search/v3?lat=20.2959847&lng=85.8246101&str=restaurant&trackingId=51bfa637-a940-5822-eb94-9caf090c30f8&submitAction=ENTER&queryUniqueId=74637fb4-1a85-70a9-5e9f-9a2c86995d03'
+  //     );
+  //     const data = await response.json();
+  //     const restaurants =
+  //       data?.data?.cards?.[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.slice(
+  //         1,
+  //         100
+  //       ) || [];
+  //     setRestaurantData(restaurants);
+  //     setFilteredRestaurant(restaurants);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const handleSearch = () => {
     const filteredList = restaurantData.filter((res) =>
@@ -42,6 +44,7 @@ const Body = () => {
     setFilteredRestaurant(filteredTopRestaurants);
   };
 
+  
   return (
     <div className="body-container">
       <div className="filter-bar">
@@ -64,7 +67,7 @@ const Body = () => {
             return <RestaurantCard key={index} resData={res} />;
           })
         ) : (
-          <h3>No restaurant found</h3>
+          <Shimmer/>
         )}
       </div>
     </div>
